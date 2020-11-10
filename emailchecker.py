@@ -48,6 +48,7 @@ for msg in bestBuyMessages:
         cost = bestBuy.findOrderTotal(msgHtml)
 
         #creates a dataframe and appends to a series
+        #append is inefficient but suffices for emails in a small business
         append = pd.DataFrame({'Shipping #': None, 'Date': dateReceived, 'Product # Quantity': modelAndQuantity, 'Destination': destination, 'Cost': cost}, index = [orderNo])
         orderConfirmations = orderConfirmations.append(append)
 
